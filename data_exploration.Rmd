@@ -1,0 +1,110 @@
+---
+title: "Data Exploration with House Prices"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+```
+
+## Housing Prices Exporation
+
+This is a quick R exercise based on https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python by Pedro Marcelino
+
+```{r load_train_data}
+
+df_train <- read_csv("house_prices_data/train.csv")
+spec(df_train)
+
+```
+```{r analyse_sales_price}
+
+df_train %>%
+  select(SalePrice) %>%
+  summary()
+
+```
+## Plot Sales Price
+
+A Plot of the sales price
+
+```{r sales_price_plot, echo=FALSE}
+
+library(ggplot2)
+
+ggplot(df_train, aes(x=SalePrice)) + 
+  geom_histogram(aes(y=..density..)) + 
+  geom_density(alpha=.2, fill="#FF6666")
+
+```
+# Further Analysis of SalePrice
+
+```{r sales_price_analysis}
+library(moments)
+
+df_train %>%
+  select(SalePrice) %>%
+  summarise(Skew = skewness(.), Kurtosis = kurtosis(.))
+
+```
+
+# Relationship between Sales price and other variables
+
+```{r scatter_plots}
+
+ggplot(df_train, aes(x=GrLivArea, y=SalePrice)) +
+  geom_point()
+
+```
+```{r scatter_plots}
+
+ggplot(df_train, aes(x=TotalBsmtSF, y=SalePrice)) +
+  geom_point()
+
+```
+Box plot with other variables
+```{r box_plot}
+
+ggplot(df_train %>% mutate(OverallQualCat=as.factor(OverallQual)), aes(y=SalePrice, x=OverallQualCat)) +
+  geom_boxplot()
+
+```
+```{r year_box_plot}
+
+ggplot(df_train %>% mutate(YearBuiltCat=as.factor(YearBuilt)), aes(y=SalePrice, x=YearBuiltCat)) +
+  geom_boxplot()
+
+```
+Lets look at some detailed correlation plots
+
+```{r correlation_plot, fig.width=14}
+library(reshape2)
+
+numeric_train <- df_train %>% 
+                  select_if(., is.numeric)
+
+correlation_matrix = cor(numeric_train)
+
+ggplot(melt(correlation_matrix), aes(x=Var1, y=Var2, fill=value) ) +
+  geom_tile() +
+  scale_x_discrete(guide=guide_axis(n.dodge=3))
+
+
+```
+# Exploring Pair Plotting
+
+```{r}
+library(GGally)
+
+pair_plot_cols <- df_train %>%
+  select(SalePrice, OverallQual, GrLivArea, GarageCars, TotalBsmtSF, FullBath, YearBuilt)
+
+ggpairs(pair_plot_cols)
+
+```
+
+# Missing Data
+
+We will stop here for now
