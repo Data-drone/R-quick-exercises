@@ -4,7 +4,9 @@ install.packages("tidyverse")
 # xgboost
 install.packages("drat", repos="https://cran.rstudio.com")
 drat:::addRepo("dmlc")
-install.packages("xgboost", repos="http://dmlc.ml/drat/", type = "source")
+#install.packages("xgboost", repos="http://dmlc.ml/drat/", type = "source")
+
+install.packages("xgboost")
 
 # getting access to kaggle data
 install.packages("devtools")
@@ -21,3 +23,4 @@ install.packages("GGally")
 # standard modelling package
 install.packages("caret")
 install.packages("e1071")
+install.packages("fastDummies")
