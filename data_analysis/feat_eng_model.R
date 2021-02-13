@@ -8,8 +8,8 @@ library(e1071)
 library(fastDummies)
 
 
-train <- read_csv('house_prices_data/train.csv')
-test <- read_csv('house_prices_data/test.csv')
+train <- read_csv('../house_prices_data/train.csv')
+test <- read_csv('../house_prices_data/test.csv')
 
 train_wo_id <- train %>% dplyr::select(-Id)
 test_wo_id <- test %>% dplyr::select(-Id)

@@ -15,7 +15,7 @@ This is a quick R exercise based on https://www.kaggle.com/pmarcelino/comprehens
 
 ```{r load_train_data}
 
-df_train <- read_csv("house_prices_data/train.csv")
+df_train <- read_csv("../house_prices_data/train.csv")
 spec(df_train)
 
 ```
