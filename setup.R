@@ -24,3 +24,6 @@ install.packages("GGally")
 install.packages("caret")
 install.packages("e1071")
 install.packages("fastDummies")
+
+# for shiny apps
+install.packages("shiny")
