@@ -21,6 +21,11 @@ Shiny Application
 - TODO
 
 Spark Integration
+- Possible Content to add:
+    https://www.eddjberry.com/post/2018-12-12-sparklyr-feature-selection/
+    https://spark.rstudio.com/mlib/#example-workflow
+    https://datascience-enthusiast.com/Hadoop/SparkR_on_HDP_AWS_EC2_part2.html
+    https://docs.databricks.com/spark/latest/sparkr/tutorials/using-glm.html#train-a-linear-regression-model-using-glm
 - TODO
 
 
