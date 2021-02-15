@@ -8,8 +8,8 @@ library(e1071)
 library(fastDummies)
 
 
-train <- read_csv('../house_prices_data/train.csv')
-test <- read_csv('../house_prices_data/test.csv')
+train <- read_csv('house_prices_data/train.csv')
+test <- read_csv('house_prices_data/test.csv')
 
 train_wo_id <- train %>% dplyr::select(-Id)
 test_wo_id <- test %>% dplyr::select(-Id)
@@ -111,6 +111,15 @@ feat_enged_table <- fastDummies::dummy_cols(box_coxed, remove_selected_columns=T
 train_sub = feat_enged_table[0:ntrain,]
 test_sub = feat_enged_table %>%
   dplyr::slice(ntrain+1:n())
+
+########## Save out copies here for use elsewhere if need be
+library(arrow)
+
+arrow::write_feather(train_sub, 'temp_data/train_features.feather')
+arrow::write_feather(test_sub, 'temp_data/test_features.feather')
+
+
+########## Modelling
 
 library(xgboost)
 xgb <- xgboost(data = as.matrix(train_sub),

@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # ignore my kaggle deets
 kaggle.json
+
+# ignore the temp_data
+temp_data/*.feather

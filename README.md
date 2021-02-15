@@ -18,7 +18,8 @@ Data Analytics Example with data munging / visualisation and modelling
     https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard
     
 Shiny Application
-- TODO
+- Basic one based on: Based on: https://github.com/rstudio/shiny-examples/tree/master/086-bus-dashboard
+   - TODO - Still needs refactoring to show updated routes properly but will suffice for now
 
 Spark Integration
 - Possible Content to add:

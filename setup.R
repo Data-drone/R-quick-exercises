@@ -27,3 +27,9 @@ install.packages("fastDummies")
 
 # for shiny apps
 install.packages("shiny")
+
+# for spark
+install.packages("sparklyr")
+
+# install arrow format for saving data
+install.packages("arrow")
