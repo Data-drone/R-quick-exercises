@@ -33,3 +33,7 @@ install.packages("sparklyr")
 
 # install arrow format for saving data
 install.packages("arrow")
+
+# xgboost this is only for spark 2.4 at this stage
+install.packages("sparkxgb")
+#devtools::install_github("Data-drone/sparkxgb", ref="feature/xgboost-1.3.1")
