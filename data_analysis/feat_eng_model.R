@@ -37,7 +37,7 @@ full_dataset <- rbind(train_cut, test)
 ## Missing Data Imputation
 
 full_dataset <- full_dataset %>%
-  tidyr::replace_na(list(Alley='None', Fence='None', FireplaceQu='None', 
+  tidyr::replace_na(list(PoolQC='None', Alley='None', Fence='None', FireplaceQu='None', 
                   GarageType='None', GarageFinish='None', GarageQual='None', 
                   GarageCond='None', GarageYrBlt=0, GarageArea=0, GarageCars=0,
                   BsmtFinSF1=0, BsmtFinSF2=0, BsmtUnfSF=0,TotalBsmtSF=0, 
@@ -116,6 +116,7 @@ test_sub = feat_enged_table %>%
 library(arrow)
 
 arrow::write_feather(train_sub, 'temp_data/train_features.feather')
+arrow::write_feather(train_y_values, 'temp_data/train_target.feather')
 arrow::write_feather(test_sub, 'temp_data/test_features.feather')
 
 
