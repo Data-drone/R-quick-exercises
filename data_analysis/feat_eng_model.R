@@ -37,7 +37,7 @@ full_dataset <- rbind(train_cut, test)
 ## Missing Data Imputation
 
 full_dataset <- full_dataset %>%
-  tidyr::replace_na(list(PoolQC='None', Alley='None', Fence='None', FireplaceQu='None', 
+  tidyr::replace_na(list(PoolQC='None', MiscFeature='None', Alley='None', Fence='None', FireplaceQu='None', 
                   GarageType='None', GarageFinish='None', GarageQual='None', 
                   GarageCond='None', GarageYrBlt=0, GarageArea=0, GarageCars=0,
                   BsmtFinSF1=0, BsmtFinSF2=0, BsmtUnfSF=0,TotalBsmtSF=0, 
