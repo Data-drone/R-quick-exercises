@@ -22,11 +22,16 @@ Shiny Application
    - TODO - Still needs refactoring to show updated routes properly but will suffice for now
 
 Spark Integration
+`spark` subfolder
+- `sparklyr_experiment,R`
+    Sparklyr and mllib driven model development based on:
+        https://www.eddjberry.com/post/2018-12-12-sparklyr-feature-selection/
+- `sparklyr_xgb.R`
+    XGBoost4j with Rstudio sparkxgb (Spark 2.4 only currently)
+        
 - Possible Content to add:
-    https://www.eddjberry.com/post/2018-12-12-sparklyr-feature-selection/
     https://spark.rstudio.com/mlib/#example-workflow
     https://datascience-enthusiast.com/Hadoop/SparkR_on_HDP_AWS_EC2_part2.html
-    https://docs.databricks.com/spark/latest/sparkr/tutorials/using-glm.html#train-a-linear-regression-model-using-glm
 - TODO
 
 
