@@ -7,6 +7,9 @@ library(caret)
 library(e1071)
 library(fastDummies)
 
+# we need newer dplyr for starting
+# this script needs dplyr > 1.0
+#devtools::install_github("tidyverse/dplyr", ref="v1.0.3")
 
 train <- read_csv('house_prices_data/train.csv')
 test <- read_csv('house_prices_data/test.csv')

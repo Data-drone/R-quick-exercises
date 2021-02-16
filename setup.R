@@ -32,9 +32,15 @@ install.packages("shiny")
 install.packages("sparklyr")
 
 # install arrow format for saving data
-install.packages("arrow")
+install.packages("arrow", dependencies = TRUE, INSTALL_opts = '--no-lock')
+arrow::install_arrow()
 
 # xgboost this is only for spark 2.4 at this stage
 install.packages("sparkxgb")
 #devtools::install_github("Data-drone/sparkxgb", ref="feature/xgboost-1.3.1")
 
+install.packages("devtools")
+
+# setting up a local spark
+#library(sparklyr)
+#spark_install(version = "2.4.0")
