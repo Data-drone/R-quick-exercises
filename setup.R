@@ -27,6 +27,8 @@ install.packages("fastDummies")
 
 # for shiny apps
 install.packages("shiny")
+install.packages("shinydashboard")
+install.packages("leaflet")
 
 # for spark
 install.packages("sparklyr")
